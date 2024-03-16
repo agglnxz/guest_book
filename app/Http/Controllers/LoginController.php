@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    public function login(Request $request)
+    public function view_login()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     public function Loginproses(Request $request)

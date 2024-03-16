@@ -9,4 +9,6 @@ use App\Http\Controllers\DashboardController;
 // });
 
 Route::get('/',[DashboardController::class,'view_dashboard'])->name('dashboard');
+Route::get('/',[LoginController::class,'view_login'])->name('login');
+
 Route::post('/login', [LoginController::class, 'login'])->name('login');
