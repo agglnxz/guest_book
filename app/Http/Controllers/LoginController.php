@@ -15,13 +15,13 @@ class LoginController extends Controller
     {
         $this->validate($request, [
             'username' =>'required',
-            'password' => '<PASSWORD>'
+            'password' => 'required',
         ]);
 
         $username = $request->username;
         $password = $request->password;
 
-        if ($username == 'admin' && $password == '<PASSWORD>') {
+        if ($username == 'admin' && $password == '12345') {
             return redirect('/dashboard');
         } else {
             return redirect('/login')->with('error', 'Username atau Password Salah');
