@@ -1,11 +1,20 @@
 @extends('layouts.admin')
 @section('content')
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-    <input type="email" class="form-input bg-white" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-    <textarea class="form-input" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
+<main class="main users chart-page" id="skip-target">
+    <div class="container">
+        <h2 class="main-title">Dashboard</h2>
+        <div class="row">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-input bg-white" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-input" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        </div>
+    </div>
+</main>
+
+
 @endsection

@@ -17,3 +17,4 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // admin
 Route::get('/dashboardAdmin',[AdminController::class,'index'])->name('dashboardAdmin');
+Route::get('/tambahTamu',[AdminController::class,'view_tambahTamu'])->name('tambahTamu');
