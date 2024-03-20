@@ -9,11 +9,10 @@ use App\Http\Controllers\DashboardController;
 //     return view('welcome');
 // });
 
-Route::get('/',[DashboardController::class,'view_dashboard'])->name('dashboard');
 
-Route::get('/login',[LoginController::class,'view_login'])->name('login');
+Route::get('/',[LoginController::class,'view_login'])->name('login');
 
-Route::post('/login', [LoginController::class, 'Loginroses'])->name('loginProses');
+Route::post('/login', [LoginController::class, 'login'])->name('proseslogin');
 
 // admin
 Route::get('/dashboardAdmin',[AdminController::class,'index'])->name('dashboardAdmin');

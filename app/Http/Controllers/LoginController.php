@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -11,20 +13,22 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function Loginproses(Request $request)
+    public function login(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
             'username' =>'required',
-            'password' => 'required',
+            'password' => 'required|min:5',
         ]);
 
         $username = $request->username;
         $password = $request->password;
 
-        if ($username == 'admin' && $password == '12345') {
-            return redirect('/dashboard');
+        if (Auth::attempt(['name' => $username, 'password' => $password])) {
+
+            return redirect('/dashboardAdmin');
         } else {
-            return redirect('/login')->with('error', 'Username atau Password Salah');
+            return redirect('/')->withErrors('Username atau Password Salah');
+
         }
     }
 }
