@@ -119,7 +119,7 @@
                                             <span class="notification-dropdown__subtitle">Unnecessary caches take up a
                                                 lot of memory space and
                                                 interfere ...</span>
-                                                
+
                                         </div>
                                     </a>
                                 </li>
@@ -160,10 +160,13 @@
                                         <i data-feather="settings" aria-hidden="true"></i>
                                         <span>Account settings</span>
                                     </a></li>
-                                <li><a class="danger" href="##">
+                                    <form action="{{route('logout')}}" method="post">
+                                        @csrf
+                                <li><button style="border:none; background:none; color:red" type="submit">
                                         <i data-feather="log-out" aria-hidden="true"></i>
                                         <span>Log out</span>
-                                    </a></li>
+                                </button></li>
+                                </form>
                             </ul>
                         </div>
                     </div>
