@@ -78,15 +78,11 @@
                 <div class="chart">
                     <canvas id="myChart" aria-label="Site statistics" role="img"></canvas>
                 </div>
-                <div class="users-table table-wrapper">
+                {{-- <div class="users-table table-wrapper">
                     <table class="posts-table">
                         <thead>
                             <tr class="users-table-info">
-                                <th>
-                                    <label class="users-table__checkbox ms-20">
-                                        <input type="checkbox" class="check-all">Thumbnail
-                                    </label>
-                                </th>
+
                                 <th>Title</th>
                                 <th>Author</th>
                                 <th>Status</th>
@@ -355,9 +351,9 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> --}}
             </div>
-            <div class="col-lg-3">
+            {{-- <div class="col-lg-3">
                 <article class="customers-wrapper">
                     <canvas id="customersChart" aria-label="Customers statistics"
                         role="img"></canvas>
@@ -365,7 +361,7 @@
   <p class="customers__date">28 Daily Avg.</p>
   <picture><source srcset="./img/svg/customers.svg" type="image/webp"><img src="./img/svg/customers.svg" alt=""></picture> -->
                 </article>
-                <article class="white-block">
+                {{-- <article class="white-block">
                     <div class="top-cat-title">
                         <h3>Top categories</h3>
                         <p>28 Categories, 1400 Posts</p>
@@ -452,8 +448,8 @@
                             </a>
                         </li>
                     </ul>
-                </article>
-            </div>
+                </article> --}}
+            </div> 
         </div>
     </div>
 </main>
