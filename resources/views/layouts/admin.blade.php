@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
-<!-- Mirrored from demo.dashboardpack.com/cryptocurrency-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Mar 2024 14:17:44 GMT -->
-
 <head>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>BitCrypto</title>
+    <title>Buku Tamu</title>
     <link rel="icon" href="{{ asset('img/mini_logo.png') }}" type="image/png">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap1.min.css') }}" />
@@ -40,7 +36,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/metisMenu.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/style1.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style1.css')}}" />
     <link rel="stylesheet" href="{{ asset('css/colors/default.css') }}" id="colorSkinCSS">
 </head>
 
@@ -55,14 +51,24 @@
                 <i class="ti-close"></i>
             </div>
         </div>
-        <ul id="sidebar_menu">
+        <ul id="sidebar_menu" class="metismenu">
             <li class>
                 <a href="{{ route('dashboardAdmin') }}" aria-expanded="false">
                     <div class="nav_icon_small">
                         <img src="img/menu-icon/1.svg" alt>
                     </div>
                     <div class="nav_title">
-                        <span>Dashboard </span>
+                        <span>Dashboard</span>
+                    </div>
+                </a>
+            </li>
+            <li class>
+                <a href="{{ route('view_tamu') }}" aria-expanded="false">
+                    <div class="nav_icon_small">
+                        <img src="img/menu-icon/4.svg" alt>
+                    </div>
+                    <div class="nav_title">
+                        <span>Tambah Tamu</span>
                     </div>
                 </a>
             </li>

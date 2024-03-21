@@ -7,7 +7,7 @@
                 <div class="white_card card_height_100 mb_30">
                     <div class="white_card_header">
                         <div class="white_box_tittle">
-                            <h4>From Input Tamu</h4>
+                            <h4>Tambah Tamu</h4>
                         </div>
                     </div>
                     <div class="white_card_body">

@@ -106,7 +106,7 @@
                                 <div class="white_card_header">
                                     <div class="box_header m-0">
                                         <div class="main-title">
-                                            <h3 class="m-0">Earning</h3>
+                                            <h3 class="m-0">Data Tamu</h3>
                                         </div>
                                         <div class="erning_btn d-flex">
                                             <a href="#" class="small_blue_btn radius_0 border-right-0">Month</a>
@@ -120,12 +120,12 @@
                                             <table class="table lms_table_active2  ">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">NO</th>
-                                                        <th scope="col">Currency</th>
-                                                        <th scope="col">Plateform</th>
-                                                        <th scope="col">Email</th>
-                                                        <th scope="col">ID</th>
-                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">No</th>
+                                                        <th scope="col">Nama</th>
+                                                        <th scope="col">email</th>
+                                                        <th scope="col">alamat</th>
+                                                        <th scope="col">No Telefon</th>
+                                                        <th scope="col">pesan</th>
                                                         <th scope="col">Status</th>
                                                     </tr>
                                                 </thead>
@@ -133,11 +133,11 @@
                                                 <tbody>
                                                     <tr>
                                                         <td scope="row">{{$num+=1}}</td>
-
-                                                        <td>bitcoin.com</td>
-                                                        <td>Using - Bank</td>
-                                                        <td>-0.454 USD</td>
-                                                        <td>$25.00</td>
+                                                        <td>{{$item->nama}}</td>
+                                                        <td>{{$item->email}}</td>
+                                                        <td>{{$item->alamat}}</td>
+                                                        <td>{{$item->no_telefon}}</td>
+                                                        <td>{{$item->pesan}}</td>
                                                         <td><a href="#" class="status_btn pending_btn">Pending</a>
                                                         </td>
                                                     </tr>
