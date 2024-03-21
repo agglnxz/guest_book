@@ -9,13 +9,12 @@ class TamuController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate($request, [
-
+        $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
             'email' => 'required',
-            'notelefon' => 'required',
-            'pesan' => 'required',
+            'no_telefon' => 'required',
+            'pesan' => 'required'
 
         ]);
 
@@ -23,8 +22,8 @@ class TamuController extends Controller
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'email' => $request->email,
-            'notelefon' => $request->notelefon,
-            'pesan' => $request->pesan,
+            'no_telefon' => $request->no_telefon,
+            'pesan' => $request->pesan
         ]);
         return back();
 

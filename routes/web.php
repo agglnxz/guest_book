@@ -18,6 +18,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // admin
 Route::get('/dashboardAdmin',[AdminController::class,'index'])->name('dashboardAdmin');
-Route::get('/tambahTamu',[AdminController::class,'view_tambahTamu'])->name('tambahTamu');
+Route::get('/view_tamu',[AdminController::class,'view_tambahTamu'])->name('view_tamu');
 Route::post('/tambahtamu', [TamuController::class, 'store'])->name('tambahtamu');
 

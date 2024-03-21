@@ -12,7 +12,7 @@ class tamu extends Model
         'nama',
         'alamat',
         'email',
-        'notelefon',
+        'no_telefon',
         'pesan',
     ];
 }
