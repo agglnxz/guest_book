@@ -117,7 +117,6 @@
                                 <div class="white_card_body">
                                     <div class="QA_section">
                                         <div class="QA_table mb-0">
-
                                             <table class="table lms_table_active2  ">
                                                 <thead>
                                                     <tr>
@@ -130,10 +129,11 @@
                                                         <th scope="col">Status</th>
                                                     </tr>
                                                 </thead>
+                                            @forelse ($tamu as $num => $item )
                                                 <tbody>
                                                     <tr>
-                                                        <td scope="row">1</td>
-                                                        <td> <img src="img/currency/1.svg" alt> </td>
+                                                        <td scope="row">{{$num+=1}}</td>
+
                                                         <td>bitcoin.com</td>
                                                         <td>Using - Bank</td>
                                                         <td>-0.454 USD</td>
@@ -141,125 +141,20 @@
                                                         <td><a href="#" class="status_btn pending_btn">Pending</a>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td scope="row">1</td>
-                                                        <td> <img src="img/currency/2.svg" alt> </td>
-                                                        <td>bitcoin.com</td>
-                                                        <td>Using - Bank</td>
-                                                        <td>-0.454 USD</td>
-                                                        <td>$25.00</td>
-                                                        <td><a href="#" class="status_btn pending_btn">Pending</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">1</td>
-                                                        <td> <img src="img/currency/3.svg" alt> </td>
-                                                        <td>bitcoin.com</td>
-                                                        <td>Using - Bank</td>
-                                                        <td>-0.454 USD</td>
-                                                        <td>$25.00</td>
-                                                        <td><a href="#" class="status_btn pending_btn">Pending</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">1</td>
-                                                        <td> <img src="img/currency/4.svg" alt> </td>
-                                                        <td>bitcoin.com</td>
-                                                        <td>Using - Bank</td>
-                                                        <td>-0.454 USD</td>
-                                                        <td>$25.00</td>
-                                                        <td><a href="#" class="status_btn">Success</a></td>
-                                                    </tr>
+
+
                                                 </tbody>
                                             </table>
+                                            @empty
+
+                                            @endforelse
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         {{-- <div class="col-xl-6">
-                        <div class="white_card card_height_100 mb_30">
-                            <div class="white_card_header">
-                                <div class="box_header m-0">
-                                    <div class="main-title">
-                                        <h3 class="m-0">Exchange</h3>
-                                    </div>
-                                    <div class="header_more_tool">
-                                        <div class="dropdown">
-                                            <span class="dropdown-toggle" id="dropdownMenuButton"
-                                                data-bs-toggle="dropdown">
-                                                <i class="ti-more-alt"></i>
-                                            </span>
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#"> <i
-                                                        class="ti-eye"></i> Action</a>
-                                                <a class="dropdown-item" href="#"> <i
-                                                        class="ti-trash"></i> Delete</a>
-                                                <a class="dropdown-item" href="#"> <i
-                                                        class="fas fa-edit"></i> Edit</a>
-                                                <a class="dropdown-item" href="#"> <i
-                                                        class="ti-printer"></i> Print</a>
-                                                <a class="dropdown-item" href="#"> <i
-                                                        class="fa fa-download"></i> Download</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body">
-                                <div class="Activity_timeline">
-                                    <ul>
-                                        <li>
-                                            <div class="activity_bell"></div>
-                                            <div class="timeLine_inner d-flex align-items-center">
-                                                <div class="activity_wrap">
-                                                    <h6>5 min ago</h6>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                        Quisque scelerisque
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="activity_bell "></div>
-                                            <div class="timeLine_inner d-flex align-items-center">
-                                                <div class="activity_wrap">
-                                                    <h6>6 min ago</h6>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                        Quisque scelerisque
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="activity_bell bell_lite"></div>
-                                            <div class="timeLine_inner d-flex align-items-center">
-                                                <div class="activity_wrap">
-                                                    <h6>7 min ago</h6>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                        Quisque scelerisque
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="activity_bell bell_lite"></div>
-                                            <div class="timeLine_inner d-flex align-items-center">
-                                                <div class="activity_wrap">
-                                                    <h6>8 min ago</h6>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                        Quisque scelerisque
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-                        <div class="col-xl-6">
                             <div class="white_card card_height_100 mb_30">
                                 <div class="date_picker_wrapper">
                                     <div class="default-datepicker">
@@ -267,7 +162,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
@@ -275,5 +170,5 @@
         </div>
     </div>
 
-  
+
 @endsection
