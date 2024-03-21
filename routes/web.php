@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TamuController;
 use App\Http\Controllers\DashboardController;
 
 // Route::get('/', function () {
@@ -18,3 +19,5 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // admin
 Route::get('/dashboardAdmin',[AdminController::class,'index'])->name('dashboardAdmin');
 Route::get('/tambahTamu',[AdminController::class,'view_tambahTamu'])->name('tambahTamu');
+Route::post('/tambahtamu', [TamuController::class, 'store'])->name('tambahtamu');
+
