@@ -1,456 +1,428 @@
 @extends('layouts.admin')
 @section('content')
-<main class="main users chart-page" id="skip-target">
-    <div class="container">
-        <h2 class="main-title">Dashboard</h2>
-        <div class="row stat-cards">
-            <div class="col-md-6 col-xl-3">
-                <article class="stat-cards-item">
-                    <div class="stat-cards-icon primary">
-                        <i data-feather="bar-chart-2" aria-hidden="true"></i>
-                    </div>
-                    <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">1478 286</p>
-                        <p class="stat-cards-info__title">Total visits</p>
-                        <p class="stat-cards-info__progress">
-                            <span class="stat-cards-info__profit success">
-                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
-                            </span>
-                            Last month
-                        </p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <article class="stat-cards-item">
-                    <div class="stat-cards-icon warning">
-                        <i data-feather="file" aria-hidden="true"></i>
-                    </div>
-                    <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">1478 286</p>
-                        <p class="stat-cards-info__title">Total visits</p>
-                        <p class="stat-cards-info__progress">
-                            <span class="stat-cards-info__profit success">
-                                <i data-feather="trending-up" aria-hidden="true"></i>0.24%
-                            </span>
-                            Last month
-                        </p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <article class="stat-cards-item">
-                    <div class="stat-cards-icon purple">
-                        <i data-feather="file" aria-hidden="true"></i>
-                    </div>
-                    <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">1478 286</p>
-                        <p class="stat-cards-info__title">Total visits</p>
-                        <p class="stat-cards-info__progress">
-                            <span class="stat-cards-info__profit danger">
-                                <i data-feather="trending-down" aria-hidden="true"></i>1.64%
-                            </span>
-                            Last month
-                        </p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <article class="stat-cards-item">
-                    <div class="stat-cards-icon success">
-                        <i data-feather="feather" aria-hidden="true"></i>
-                    </div>
-                    <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">1478 286</p>
-                        <p class="stat-cards-info__title">Total visits</p>
-                        <p class="stat-cards-info__progress">
-                            <span class="stat-cards-info__profit warning">
-                                <i data-feather="trending-up" aria-hidden="true"></i>0.00%
-                            </span>
-                            Last month
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="chart">
-                    <canvas id="myChart" aria-label="Site statistics" role="img"></canvas>
-                </div>
-                {{-- <div class="users-table table-wrapper">
-                    <table class="posts-table">
-                        <thead>
-                            <tr class="users-table-info">
+<section class="main_content dashboard_part large_header_bg">
 
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Status</th>
-                                <th>Date</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <label class="users-table__checkbox">
-                                        <input type="checkbox" class="check">
-                                        <div class="categories-table-img">
-                                            <picture>
-                                                <source srcset="./img/categories/01.webp"
-                                                    type="image/webp"><img src="./img/categories/01.jpg"
-                                                    alt="category">
-                                            </picture>
-                                        </div>
-                                    </label>
-                                </td>
-                                <td>
-                                    Starting your traveling blog with Vasco
-                                </td>
-                                <td>
-                                    <div class="pages-table-img">
-                                        <picture>
-                                            <source srcset="./img/avatar/avatar-face-04.webp"
-                                                type="image/webp"><img
-                                                src="./img/avatar/avatar-face-04.png" alt="User Name">
-                                        </picture>
-                                        Jenny Wilson
-                                    </div>
-                                </td>
-                                <td><span class="badge-pending">Pending</span></td>
-                                <td>17.04.2021</td>
-                                <td>
-                                    <span class="p-relative">
-                                        <button class="dropdown-btn transparent-btn" type="button"
-                                            title="More info">
-                                            <div class="sr-only">More info</div>
-                                            <i data-feather="more-horizontal" aria-hidden="true"></i>
-                                        </button>
-                                        <ul class="users-item-dropdown dropdown">
-                                            <li><a href="##">Edit</a></li>
-                                            <li><a href="##">Quick edit</a></li>
-                                            <li><a href="##">Trash</a></li>
-                                        </ul>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="users-table__checkbox">
-                                        <input type="checkbox" class="check">
-                                        <div class="categories-table-img">
-                                            <picture>
-                                                <source srcset="./img/categories/02.webp"
-                                                    type="image/webp"><img src="./img/categories/02.jpg"
-                                                    alt="category">
-                                            </picture>
-                                        </div>
-                                    </label>
-                                </td>
-                                <td>
-                                    Start a blog to reach your creative peak
-                                </td>
-                                <td>
-                                    <div class="pages-table-img">
-                                        <picture>
-                                            <source srcset="./img/avatar/avatar-face-03.webp"
-                                                type="image/webp"><img
-                                                src="./img/avatar/avatar-face-03.png" alt="User Name">
-                                        </picture>
-                                        Annette Black
-                                    </div>
-                                </td>
-                                <td><span class="badge-pending">Pending</span></td>
-                                <td>23.04.2021</td>
-                                <td>
-                                    <span class="p-relative">
-                                        <button class="dropdown-btn transparent-btn" type="button"
-                                            title="More info">
-                                            <div class="sr-only">More info</div>
-                                            <i data-feather="more-horizontal" aria-hidden="true"></i>
-                                        </button>
-                                        <ul class="users-item-dropdown dropdown">
-                                            <li><a href="##">Edit</a></li>
-                                            <li><a href="##">Quick edit</a></li>
-                                            <li><a href="##">Trash</a></li>
-                                        </ul>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="users-table__checkbox">
-                                        <input type="checkbox" class="check">
-                                        <div class="categories-table-img">
-                                            <picture>
-                                                <source srcset="./img/categories/03.webp"
-                                                    type="image/webp"><img src="./img/categories/03.jpg"
-                                                    alt="category">
-                                            </picture>
-                                        </div>
-                                    </label>
-                                </td>
-                                <td>
-                                    Helping a local business reinvent itself
-                                </td>
-                                <td>
-                                    <div class="pages-table-img">
-                                        <picture>
-                                            <source srcset="./img/avatar/avatar-face-02.webp"
-                                                type="image/webp"><img
-                                                src="./img/avatar/avatar-face-02.png" alt="User Name">
-                                        </picture>
-                                        Kathryn Murphy
-                                    </div>
-                                </td>
-                                <td><span class="badge-active">Active</span></td>
-                                <td>17.04.2021</td>
-                                <td>
-                                    <span class="p-relative">
-                                        <button class="dropdown-btn transparent-btn" type="button"
-                                            title="More info">
-                                            <div class="sr-only">More info</div>
-                                            <i data-feather="more-horizontal" aria-hidden="true"></i>
-                                        </button>
-                                        <ul class="users-item-dropdown dropdown">
-                                            <li><a href="##">Edit</a></li>
-                                            <li><a href="##">Quick edit</a></li>
-                                            <li><a href="##">Trash</a></li>
-                                        </ul>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="users-table__checkbox">
-                                        <input type="checkbox" class="check">
-                                        <div class="categories-table-img">
-                                            <picture>
-                                                <source srcset="./img/categories/04.webp"
-                                                    type="image/webp"><img src="./img/categories/04.jpg"
-                                                    alt="category">
-                                            </picture>
-                                        </div>
-                                    </label>
-                                </td>
-                                <td>
-                                    Caring is the new marketing
-                                </td>
-                                <td>
-                                    <div class="pages-table-img">
-                                        <picture>
-                                            <source srcset="./img/avatar/avatar-face-05.webp"
-                                                type="image/webp"><img
-                                                src="./img/avatar/avatar-face-05.png" alt="User Name">
-                                        </picture>
-                                        Guy Hawkins
-                                    </div>
-                                </td>
-                                <td><span class="badge-active">Active</span></td>
-                                <td>17.04.2021</td>
-                                <td>
-                                    <span class="p-relative">
-                                        <button class="dropdown-btn transparent-btn" type="button"
-                                            title="More info">
-                                            <div class="sr-only">More info</div>
-                                            <i data-feather="more-horizontal" aria-hidden="true"></i>
-                                        </button>
-                                        <ul class="users-item-dropdown dropdown">
-                                            <li><a href="##">Edit</a></li>
-                                            <li><a href="##">Quick edit</a></li>
-                                            <li><a href="##">Trash</a></li>
-                                        </ul>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="users-table__checkbox">
-                                        <input type="checkbox" class="check">
-                                        <div class="categories-table-img">
-                                            <picture>
-                                                <source srcset="./img/categories/01.webp"
-                                                    type="image/webp"><img src="./img/categories/01.jpg"
-                                                    alt="category">
-                                            </picture>
-                                        </div>
-                                    </label>
-                                </td>
-                                <td>
-                                    How to build a loyal community online and offline
-                                </td>
-                                <td>
-                                    <div class="pages-table-img">
-                                        <picture>
-                                            <source srcset="./img/avatar/avatar-face-03.webp"
-                                                type="image/webp"><img
-                                                src="./img/avatar/avatar-face-03.png" alt="User Name">
-                                        </picture>
-                                        Robert Fox
-                                    </div>
-                                </td>
-                                <td><span class="badge-active">Active</span></td>
-                                <td>17.04.2021</td>
-                                <td>
-                                    <span class="p-relative">
-                                        <button class="dropdown-btn transparent-btn" type="button"
-                                            title="More info">
-                                            <div class="sr-only">More info</div>
-                                            <i data-feather="more-horizontal" aria-hidden="true"></i>
-                                        </button>
-                                        <ul class="users-item-dropdown dropdown">
-                                            <li><a href="##">Edit</a></li>
-                                            <li><a href="##">Quick edit</a></li>
-                                            <li><a href="##">Trash</a></li>
-                                        </ul>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="users-table__checkbox">
-                                        <input type="checkbox" class="check">
-                                        <div class="categories-table-img">
-                                            <picture>
-                                                <source srcset="./img/categories/03.webp"
-                                                    type="image/webp"><img src="./img/categories/03.jpg"
-                                                    alt="category">
-                                            </picture>
-                                        </div>
-                                    </label>
-                                </td>
-                                <td>
-                                    How to build a loyal community online and offline
-                                </td>
-                                <td>
-                                    <div class="pages-table-img">
-                                        <picture>
-                                            <source srcset="./img/avatar/avatar-face-03.webp"
-                                                type="image/webp"><img
-                                                src="./img/avatar/avatar-face-03.png" alt="User Name">
-                                        </picture>
-                                        Robert Fox
-                                    </div>
-                                </td>
-                                <td><span class="badge-active">Active</span></td>
-                                <td>17.04.2021</td>
-                                <td>
-                                    <span class="p-relative">
-                                        <button class="dropdown-btn transparent-btn" type="button"
-                                            title="More info">
-                                            <div class="sr-only">More info</div>
-                                            <i data-feather="more-horizontal" aria-hidden="true"></i>
-                                        </button>
-                                        <ul class="users-item-dropdown dropdown">
-                                            <li><a href="##">Edit</a></li>
-                                            <li><a href="##">Quick edit</a></li>
-                                            <li><a href="##">Trash</a></li>
-                                        </ul>
-                                    </span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div> --}}
-            </div>
-            {{-- <div class="col-lg-3">
-                <article class="customers-wrapper">
-                    <canvas id="customersChart" aria-label="Customers statistics"
-                        role="img"></canvas>
-                    <!--              <p class="customers__title">New Customers <span>+958</span></p>
-  <p class="customers__date">28 Daily Avg.</p>
-  <picture><source srcset="./img/svg/customers.svg" type="image/webp"><img src="./img/svg/customers.svg" alt=""></picture> -->
-                </article>
-                {{-- <article class="white-block">
-                    <div class="top-cat-title">
-                        <h3>Top categories</h3>
-                        <p>28 Categories, 1400 Posts</p>
+    <div class="container-fluid g-0">
+        <div class="row">
+            <div class="col-lg-12 p-0 ">
+                <div class="header_iner d-flex justify-content-between align-items-center">
+                    <div class="sidebar_icon d-lg-none">
+                        <i class="ti-menu"></i>
                     </div>
-                    <ul class="top-cat-list">
-                        <li>
-                            <a href="##">
-                                <div class="top-cat-list__title">
-                                    Lifestyle <span>8.2k</span>
+                    <div class="line_icon open_miniSide d-none d-lg-block">
+                        <img src="img/line_img.png" alt>
+                    </div>
+                    <div class="header_right d-flex justify-content-between align-items-center">
+                        <div class="header_notification_warp d-flex align-items-center">
+                            <li>
+                                <a class="CHATBOX_open nav-link-notify" href="#"> <img src="img/icon/msg.svg" alt>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="bell_notification_clicker nav-link-notify" href="#"> <img
+                                        src="img/icon/bell.svg" alt>
+
+                                </a>
+
+                                <div class="Menu_NOtification_Wrap">
+                                    <div class="notification_Header">
+                                        <h4>Notifications</h4>
+                                    </div>
+                                    <div class="Notification_body">
+
+                                        <div class="single_notify d-flex align-items-center">
+                                            <div class="notify_thumb">
+                                                <a href="#"><img src="img/staf/2.png" alt></a>
+                                            </div>
+                                            <div class="notify_content">
+                                                <a href="#">
+                                                    <h5>Cool Marketing </h5>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_notify d-flex align-items-center">
+                                            <div class="notify_thumb">
+                                                <a href="#"><img src="img/staf/4.png" alt></a>
+                                            </div>
+                                            <div class="notify_content">
+                                                <a href="#">
+                                                    <h5>Awesome packages</h5>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_notify d-flex align-items-center">
+                                            <div class="notify_thumb">
+                                                <a href="#"><img src="img/staf/3.png" alt></a>
+                                            </div>
+                                            <div class="notify_content">
+                                                <a href="#">
+                                                    <h5>what a packages</h5>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_notify d-flex align-items-center">
+                                            <div class="notify_thumb">
+                                                <a href="#"><img src="img/staf/2.png" alt></a>
+                                            </div>
+                                            <div class="notify_content">
+                                                <a href="#">
+                                                    <h5>Cool Marketing </h5>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_notify d-flex align-items-center">
+                                            <div class="notify_thumb">
+                                                <a href="#"><img src="img/staf/4.png" alt></a>
+                                            </div>
+                                            <div class="notify_content">
+                                                <a href="#">
+                                                    <h5>Awesome packages</h5>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_notify d-flex align-items-center">
+                                            <div class="notify_thumb">
+                                                <a href="#"><img src="img/staf/3.png" alt></a>
+                                            </div>
+                                            <div class="notify_content">
+                                                <a href="#">
+                                                    <h5>what a packages</h5>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nofity_footer">
+                                        <div class="submit_button text-center pt_20">
+                                            <a href="#" class="btn_1 green">See More</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="top-cat-list__subtitle">
-                                    Dailiy lifestyle articles <span class="purple">+472</span>
+
+                            </li>
+                        </div>
+                        <div class="profile_info d-flex align-items-center">
+                            <div class="profile_thumb mr_20">
+                                <img src="img/transfer/4.png" alt="#">
+                            </div>
+                            <div class="author_name">
+                                <h4 class="f_s_15 f_w_500 mb-0">Jiue Anderson</h4>
+                                <p class="f_s_12 f_w_400">Manager</p>
+                            </div>
+                            <div class="profile_info_iner">
+                                <div class="profile_author_name">
+                                    <p>Manager</p>
+                                    <h5>Jiue Anderson</h5>
                                 </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div class="top-cat-list__title">
-                                    Tutorials <span>8.2k</span>
+                                <div class="profile_info_details">
+                                    <a href="#">My Profile </a>
+                                    <a href="#">Settings</a>
+                                    <a href="#">Log Out </a>
                                 </div>
-                                <div class="top-cat-list__subtitle">
-                                    Coding tutorials <span class="blue">+472</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div class="top-cat-list__title">
-                                    Technology <span>8.2k</span>
-                                </div>
-                                <div class="top-cat-list__subtitle">
-                                    Dailiy technology articles <span class="danger">+472</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div class="top-cat-list__title">
-                                    UX design <span>8.2k</span>
-                                </div>
-                                <div class="top-cat-list__subtitle">
-                                    UX design tips <span class="success">+472</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div class="top-cat-list__title">
-                                    Interaction tips <span>8.2k</span>
-                                </div>
-                                <div class="top-cat-list__subtitle">
-                                    Interaction articles <span class="warning">+472</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div class="top-cat-list__title">
-                                    App development <span>8.2k</span>
-                                </div>
-                                <div class="top-cat-list__subtitle">
-                                    Mobile development articles <span class="warning">+472</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div class="top-cat-list__title">
-                                    Nature <span>8.2k</span>
-                                </div>
-                                <div class="top-cat-list__subtitle">
-                                    Wildlife animal articles <span class="warning">+472</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="##">
-                                <div class="top-cat-list__title">
-                                    Geography <span>8.2k</span>
-                                </div>
-                                <div class="top-cat-list__subtitle">
-                                    Geography articles <span class="primary">+472</span>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </article> --}}
-            </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</main>
+
+    <div class="main_content_iner overly_inner ">
+        <div class="container-fluid p-0 ">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="page_title_box d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="page_title_left">
+                            <h3 class="mb-0">Dashboard</h3>
+                            <p>Buku Tamu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-xl-12">
+                    <div class="white_card  mb_30">
+                        <div class="white_card_body anlite_table p-0">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="single_analite_content">
+                                        <h4>Tamu Hari ini</h4>
+                                        <h3><span class="counter">34</span> </h3>
+                                        {{-- <div class="d-flex">
+                                        <div>3.78 <i class="fa fa-caret-up"></i></div>
+                                        <span>This year</span>
+                                    </div> --}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="single_analite_content">
+                                        <h4>Sessions</h4>
+                                        <h3><span class="counter">2025</span> </h3>
+                                        <div class="d-flex">
+                                            <div>3.78<i class="fa fa-caret-up"></i></div>
+                                            <span>This month</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="single_analite_content">
+                                        <h4>Ethereum Wallet</h4>
+                                        <h3><span class="counter">8025</span> </h3>
+                                        <div class="d-flex">
+                                            <div>3.78 <i class="fa fa-caret-up"></i></div>
+                                            <span>This month</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="single_analite_content">
+                                        <h4>Number of Clients</h4>
+                                        <h3><span class="counter">5645</span> </h3>
+                                        <div class="d-flex">
+                                            <div>3.78 <i class="fa fa-caret-up"></i></div>
+                                            <span>This month</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- <div class="col-xl-8 ">
+                <div class="white_card mb_30 card_height_100">
+                    <div class="white_card_header">
+                        <div class="box_header m-0">
+                            <div class="main-title">
+                                <h3 class="m-0">Revenue Statistics</h3>
+                            </div>
+                            <div class="header_more_tool">
+                                <div class="dropdown">
+                                    <span class="dropdown-toggle" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown">
+                                        <i class="ti-more-alt"></i>
+                                    </span>
+                                    <div class="dropdown-menu dropdown-menu-right"
+                                        aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#"> <i class="ti-eye"></i>
+                                            Action</a>
+                                        <a class="dropdown-item" href="#"> <i class="ti-trash"></i>
+                                            Delete</a>
+                                        <a class="dropdown-item" href="#"> <i class="fas fa-edit"></i>
+                                            Edit</a>
+                                        <a class="dropdown-item" href="#"> <i class="ti-printer"></i>
+                                            Print</a>
+                                        <a class="dropdown-item" href="#"> <i
+                                                class="fa fa-download"></i> Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white_card_body pb-0">
+                        <div id="bar_chart"></div>
+                    </div>
+                </div>
+            </div> --}}
+                <div class="col-xl-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="white_card mb_30">
+                                <div class="white_card_header">
+                                    <div class="box_header m-0">
+                                        <div class="main-title">
+                                            <h3 class="m-0">Earning</h3>
+                                        </div>
+                                        <div class="erning_btn d-flex">
+                                            <a href="#" class="small_blue_btn radius_0 border-right-0">Month</a>
+                                            <a href="#" class="small_blue_btn radius_0">Week</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="white_card_body">
+                                    <div class="QA_section">
+                                        <div class="QA_table mb-0">
+
+                                            <table class="table lms_table_active2  ">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">NO</th>
+                                                        <th scope="col">Currency</th>
+                                                        <th scope="col">Plateform</th>
+                                                        <th scope="col">Email</th>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td scope="row">1</td>
+                                                        <td> <img src="img/currency/1.svg" alt> </td>
+                                                        <td>bitcoin.com</td>
+                                                        <td>Using - Bank</td>
+                                                        <td>-0.454 USD</td>
+                                                        <td>$25.00</td>
+                                                        <td><a href="#" class="status_btn pending_btn">Pending</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">1</td>
+                                                        <td> <img src="img/currency/2.svg" alt> </td>
+                                                        <td>bitcoin.com</td>
+                                                        <td>Using - Bank</td>
+                                                        <td>-0.454 USD</td>
+                                                        <td>$25.00</td>
+                                                        <td><a href="#" class="status_btn pending_btn">Pending</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">1</td>
+                                                        <td> <img src="img/currency/3.svg" alt> </td>
+                                                        <td>bitcoin.com</td>
+                                                        <td>Using - Bank</td>
+                                                        <td>-0.454 USD</td>
+                                                        <td>$25.00</td>
+                                                        <td><a href="#" class="status_btn pending_btn">Pending</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">1</td>
+                                                        <td> <img src="img/currency/4.svg" alt> </td>
+                                                        <td>bitcoin.com</td>
+                                                        <td>Using - Bank</td>
+                                                        <td>-0.454 USD</td>
+                                                        <td>$25.00</td>
+                                                        <td><a href="#" class="status_btn">Success</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="col-xl-6">
+                        <div class="white_card card_height_100 mb_30">
+                            <div class="white_card_header">
+                                <div class="box_header m-0">
+                                    <div class="main-title">
+                                        <h3 class="m-0">Exchange</h3>
+                                    </div>
+                                    <div class="header_more_tool">
+                                        <div class="dropdown">
+                                            <span class="dropdown-toggle" id="dropdownMenuButton"
+                                                data-bs-toggle="dropdown">
+                                                <i class="ti-more-alt"></i>
+                                            </span>
+                                            <div class="dropdown-menu dropdown-menu-right"
+                                                aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#"> <i
+                                                        class="ti-eye"></i> Action</a>
+                                                <a class="dropdown-item" href="#"> <i
+                                                        class="ti-trash"></i> Delete</a>
+                                                <a class="dropdown-item" href="#"> <i
+                                                        class="fas fa-edit"></i> Edit</a>
+                                                <a class="dropdown-item" href="#"> <i
+                                                        class="ti-printer"></i> Print</a>
+                                                <a class="dropdown-item" href="#"> <i
+                                                        class="fa fa-download"></i> Download</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="white_card_body">
+                                <div class="Activity_timeline">
+                                    <ul>
+                                        <li>
+                                            <div class="activity_bell"></div>
+                                            <div class="timeLine_inner d-flex align-items-center">
+                                                <div class="activity_wrap">
+                                                    <h6>5 min ago</h6>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Quisque scelerisque
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="activity_bell "></div>
+                                            <div class="timeLine_inner d-flex align-items-center">
+                                                <div class="activity_wrap">
+                                                    <h6>6 min ago</h6>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Quisque scelerisque
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="activity_bell bell_lite"></div>
+                                            <div class="timeLine_inner d-flex align-items-center">
+                                                <div class="activity_wrap">
+                                                    <h6>7 min ago</h6>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Quisque scelerisque
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="activity_bell bell_lite"></div>
+                                            <div class="timeLine_inner d-flex align-items-center">
+                                                <div class="activity_wrap">
+                                                    <h6>8 min ago</h6>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Quisque scelerisque
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        <div class="col-xl-6">
+                            <div class="white_card card_height_100 mb_30">
+                                <div class="date_picker_wrapper">
+                                    <div class="default-datepicker">
+                                        <div class="datepicker-here" data-language="en"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_part">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer_iner text-center">
+                        <p>2020 © Influence - Designed by <a href="#"> <i class="ti-heart"></i> </a><a
+                                href="#"> DashboardPack</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
 @endsection
