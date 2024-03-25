@@ -5,7 +5,7 @@
         <div class="container-fluid p-0 ">
 
             <div class="row">
-                <div class="col-12">
+                <div class="col-8">
                     <div class="page_title_box d-flex flex-wrap align-items-center justify-content-between">
                         <div class="page_title_left">
                             <h3 class="mb-0">Dashboard</h3>
@@ -15,14 +15,15 @@
                 </div>
             </div>
             <div class="row ">
-                <div class="col-xl-12">
-                    <div class="white_card  mb_30">
-                        <div class="white_card_body anlite_table p-0">
+
+                <div class="col-xl-9">
+                    <div class="white_card  mb_30  ">
+                        <div class="white_card_body anlite_table p-0 ">
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="single_analite_content">
                                         <h4>Tamu Hari ini</h4>
-                                        <h3><span class="counter">34</span> </h3>
+                                        <h3><span class="counter">{{$date->count()}}</span> </h3>
                                         {{-- <div class="d-flex">
                                         <div>3.78 <i class="fa fa-caret-up"></i></div>
                                         <span>This year</span>
@@ -31,32 +32,22 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="single_analite_content">
-                                        <h4>Sessions</h4>
-                                        <h3><span class="counter">2025</span> </h3>
-                                        <div class="d-flex">
+                                        <h4>Tamu Bulan Ini</h4>
+                                        <h3><span class="counter">{{$data->count()}}</span> </h3>
+                                        {{-- <div class="d-flex">
                                             <div>3.78<i class="fa fa-caret-up"></i></div>
                                             <span>This month</span>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="single_analite_content">
-                                        <h4>Ethereum Wallet</h4>
-                                        <h3><span class="counter">8025</span> </h3>
-                                        <div class="d-flex">
+                                        <h4>Tamu Tahun Ini</h4>
+                                        <h3><span class="counter"> {{$jumlahTamuTahunIni}}</span> </h3>
+                                        {{-- <div class="d-flex">
                                             <div>3.78 <i class="fa fa-caret-up"></i></div>
                                             <span>This month</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="single_analite_content">
-                                        <h4>Number of Clients</h4>
-                                        <h3><span class="counter">5645</span> </h3>
-                                        <div class="d-flex">
-                                            <div>3.78 <i class="fa fa-caret-up"></i></div>
-                                            <span>This month</span>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -64,41 +55,6 @@
                     </div>
                 </div>
 
-                {{-- <div class="col-xl-8 ">
-                <div class="white_card mb_30 card_height_100">
-                    <div class="white_card_header">
-                        <div class="box_header m-0">
-                            <div class="main-title">
-                                <h3 class="m-0">Revenue Statistics</h3>
-                            </div>
-                            <div class="header_more_tool">
-                                <div class="dropdown">
-                                    <span class="dropdown-toggle" id="dropdownMenuButton"
-                                        data-bs-toggle="dropdown">
-                                        <i class="ti-more-alt"></i>
-                                    </span>
-                                    <div class="dropdown-menu dropdown-menu-right"
-                                        aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#"> <i class="ti-eye"></i>
-                                            Action</a>
-                                        <a class="dropdown-item" href="#"> <i class="ti-trash"></i>
-                                            Delete</a>
-                                        <a class="dropdown-item" href="#"> <i class="fas fa-edit"></i>
-                                            Edit</a>
-                                        <a class="dropdown-item" href="#"> <i class="ti-printer"></i>
-                                            Print</a>
-                                        <a class="dropdown-item" href="#"> <i
-                                                class="fa fa-download"></i> Download</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="white_card_body pb-0">
-                        <div id="bar_chart"></div>
-                    </div>
-                </div>
-            </div> --}}
                 <div class="col-xl-12">
                     <div class="row">
                         <div class="col-12">
@@ -129,8 +85,8 @@
                                                         <th scope="col">Status</th>
                                                     </tr>
                                                 </thead>
-                                            @forelse ($tamu as $num => $item )
                                                 <tbody>
+                                                @forelse ($tamu as $num => $item )
                                                     <tr>
                                                         <td scope="row">{{$num+=1}}</td>
                                                         <td>{{$item->nama}}</td>
@@ -141,14 +97,13 @@
                                                         <td><a href="#" class="status_btn pending_btn">Pending</a>
                                                         </td>
                                                     </tr>
-
-
+                                                    @empty
+                                                    <div>
+                                                        <h3>Tidak ada data</h3>
+                                                    </div>
+                                                    @endforelse
                                                 </tbody>
                                             </table>
-                                            @empty
-
-                                            @endforelse
-
                                         </div>
                                     </div>
                                 </div>

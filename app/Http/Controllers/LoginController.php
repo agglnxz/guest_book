@@ -19,7 +19,7 @@ class LoginController extends Controller
             'username' =>'required',
             'password' => 'required|min:5',
         ]);
-
+  
         $username = $request->username;
         $password = $request->password;
 

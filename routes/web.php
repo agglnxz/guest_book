@@ -11,13 +11,16 @@ use App\Http\Controllers\DashboardController;
 // });
 
 
-Route::get('/',[LoginController::class,'view_login'])->name('login');
+Route::get('/',[LoginController::class,'view_login'])->name('login')->middleware('guest');
 
 Route::post('/login', [LoginController::class, 'login'])->name('proseslogin');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 
 // admin
-Route::get('/dashboardAdmin',[AdminController::class,'index'])->name('dashboardAdmin');
-Route::get('/view_tamu',[AdminController::class,'view_tambahTamu'])->name('view_tamu');
-Route::post('/tambahtamu', [TamuController::class, 'store'])->name('tambahtamu');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboardAdmin',[AdminController::class,'index'])->name('dashboardAdmin');
+    Route::get('/view_tamu',[AdminController::class,'view_tambahTamu'])->name('view_tamu');
+    Route::post('/tambahtamu', [TamuController::class, 'store'])->name('tambahtamu');
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+});
 
