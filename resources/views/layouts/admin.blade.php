@@ -46,8 +46,6 @@
     <nav class="sidebar dark_sidebar">
         <div class="logo d-flex justify-content-between">
             <a class="large_logo" href="index-2.html"><img src="img/logo_white.png" alt></a>
-            <a class="small_logo" href="index-2.html"><img src="img/mini_logo.png" alt></a>
-            <div class="sidebar_close_icon d-lg-none">
                 <i class="ti-close"></i>
             </div>
         </div>
@@ -87,7 +85,7 @@
                             <img src="img/line_img.png" alt>
                         </div>
                         <div class="header_right d-flex justify-content-between align-items-center">
-                            <div class="header_notification_warp d-flex align-items-center">
+                            {{-- <div class="header_notification_warp d-flex align-items-center">
                                 <li>
                                     <a class="CHATBOX_open nav-link-notify" href="#"> <img src="img/icon/msg.svg" alt>
                                     </a>
@@ -184,24 +182,24 @@
                                     </div>
 
                                 </li>
-                            </div>
+                            </div> --}}
 
+                            @if  (Auth::check() && (Auth::user()))
                             <div class="profile_info d-flex align-items-center">
                                 <div class="profile_thumb mr_20">
-                                    <img src="img/transfer/4.png" alt="#">
+                                    <img src="{{asset('img/default-user.jpg')}}" alt="#">
                                 </div>
                                 <div class="author_name">
-                                    <h4 class="f_s_15 f_w_500 mb-0"></h4>
-                                    {{-- <p class="f_s_12 f_w_400"></p> --}}
+                                    <h4 class="f_s_15 f_w_500 mb-0">{{Auth::user()->name}}</h4>
+                                     <p class="f_s_12 f_w_400"></p>
                                 </div>
                                 <div class="profile_info_iner">
                                     <div class="profile_author_name">
-                                        {{-- <p>Manager</p> --}}
-                                        <h5></h5>
+                                        <p>{{Auth::user()->name}}</p>
                                     </div>
                                     <div class="profile_info_details">
-                                        <a href="#">My Profile </a>
-                                        <a href="#">Settings</a>
+                                        {{-- <a href="#">My Profile </a>
+                                        <a href="#">Settings</a> --}}
                                         <form action="{{ route('logout') }}" method="post">
                                             @csrf
                                             <button style="background: none;border:none" type="submit">Logout</button>
@@ -209,6 +207,8 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
+
                         </div>
                     </div>
                 </div>
