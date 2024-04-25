@@ -4,7 +4,6 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TamuController;
-use App\Http\Controllers\DashboardController;
 
 // Route::get('/', function () {
 //     return view('welcome');
